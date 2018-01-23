@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Rover
+namespace CommandSet
 {
     public class Class1
     {
