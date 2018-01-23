@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MoveRover": {
+      "commandName": "Project",
+      "commandLineArgs": "InstructionSet01.txt"
+    }
+  }
+}
