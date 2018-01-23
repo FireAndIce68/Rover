@@ -11,7 +11,7 @@ namespace MoveRover
         {
             if (args.Length != 1)
             {
-                Console.WriteLine("Usage MoveRover fileName");
+                Console.WriteLine("Usage dotnet MoveRover.dll FileName");
                 return;
             }
             
