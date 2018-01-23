@@ -1,49 +1,72 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using RoverCore;
 
-namespace RoverConsole
+namespace MoveRover
 {
     internal class Program
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            RunRover();
+            if (args.Length != 1)
+            {
+                Console.WriteLine("Usage MoveRover fileName");
+                return;
+            }
+            
+            RunRoverFile(args[0]);
+            var keyInfo = new ConsoleKeyInfo();
+
+            while (keyInfo.KeyChar.ToString().ToUpper() != "X")
+            {
+                Console.WriteLine("X to quit, any key to run another file");
+                keyInfo = Console.ReadKey(true);
+
+                if (keyInfo.KeyChar.ToString().ToUpper() != "X")
+                {
+                    Console.Write("Please enter a file name: ");
+                    var fileName = Console.ReadLine();
+                    RunRoverFile(fileName);
+                }
+            }
         }
 
-        private static void RunRover()
+        private static void RunRoverFile(string fileName)
         {
+            if (string.IsNullOrEmpty(Path.GetDirectoryName(fileName)))
+            {
+                fileName = $@"{Directory.GetCurrentDirectory()}\{fileName}";
+            }
+
+            if (!File.Exists(fileName))
+            {
+                Console.WriteLine("File not found");
+                return;
+            }
+
+            var commands = LoadLinesFromFile(fileName);
             var rover = new Rover();
+            Console.WriteLine($@"Executing commands from {Path.GetFileName(fileName)}");
+            Console.WriteLine("---------------------------");
+            Console.WriteLine(rover.ProcessCommands(commands.ToArray()));
+            Console.WriteLine("---------------------------");
+        }
 
-            var commands = new []
+        public static List<string> LoadLinesFromFile(string fileName)
+        {
+            var lines = new List<string>();
+
+            var sr = new StreamReader(fileName);
+            var line = sr.ReadLine();
+            while (line != null)
             {
-                "88",
-                "12 E",
-                "MMLMRMMRRMML"
-            };
+                lines.Add(line);
+                line = sr.ReadLine();
+            }
+            sr.Close();
 
-            Console.WriteLine(rover.ProcessCommands(commands));
-
-            commands = new[]
-            {
-                "88",
-                "12 E",
-                "MLLMRMMRRp;MML"
-            };
-
-            Console.WriteLine(rover.ProcessCommands(commands));
-
-            commands = new[]
-            {
-                "88",
-                "12 E",
-                "LLLMRRRMRRRRMLLLLMLRMRLMRLLLRRLM"
-            };
-
-            Console.WriteLine(rover.ProcessCommands(commands));
-
-
-            Console.ReadLine();
+            return lines;
         }
     }
 }

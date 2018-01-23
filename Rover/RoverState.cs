@@ -6,9 +6,9 @@ namespace RoverCore
     public class RoverState
     {
         internal LocationVertex MaxExtent = new LocationVertex();
-        internal Direction CurrentDirection { get; set; } = Direction.Undefined;
-        internal LocationVertex CurrentLocation { get; } = new LocationVertex();
-        internal List<MoveResult> MoveErrors { get; } = new List<MoveResult>();
+        public Direction CurrentDirection { get; set; } = Direction.Undefined;
+        public LocationVertex CurrentLocation { get; } = new LocationVertex();
+        public List<MoveResult> MoveErrors { get; } = new List<MoveResult>();
 
         internal void SetPositionAndDirection(int x, int y, Direction direction)
         {

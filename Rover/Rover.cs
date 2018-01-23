@@ -5,7 +5,7 @@ namespace RoverCore
 {
     public class Rover
     {
-        private readonly RoverState _roverState = new RoverState();
+        public RoverState State { get; } = new RoverState();
 
         public string ProcessCommands(string[] commands)
         {
@@ -22,22 +22,22 @@ namespace RoverCore
                     }
                     else
                     {
-                        _roverState.MoveErrors.Add(MoveResult.SimulationError);
-                        _roverState.MoveErrors.AddRange(simulatedState.MoveErrors);
+                        State.MoveErrors.Add(MoveResult.SimulationError);
+                        State.MoveErrors.AddRange(simulatedState.MoveErrors);
                     }
                 }
                 else
                 {
-                    _roverState.MoveErrors.Add(MoveResult.CommandError);
+                    State.MoveErrors.Add(MoveResult.CommandError);
                 }
             }
             catch 
             {
-                _roverState.MoveErrors.Add(MoveResult.UnknownError);
+                State.MoveErrors.Add(MoveResult.UnknownError);
             }
 
-            var errorCount = _roverState.MoveErrors.Count;
-            var errorString = $@"Errors({string.Join(",", _roverState.MoveErrors.Select(o => o.ToString()))}";
+            var errorCount = State.MoveErrors.Count;
+            var errorString = $@"Errors({string.Join(",", State.MoveErrors.Select(o => o.ToString()))})";
             var orientationString = GetCurrentLocationandOrientation();
 
             return errorCount == 0
@@ -47,12 +47,12 @@ namespace RoverCore
 
         private string GetCurrentLocationandOrientation()
         {
-            return _roverState.GetFormattedState();
+            return State.GetFormattedState();
         }
 
         private RoverState SimulateCommands(CommandSet commandSet)
         {
-            var roverState = _roverState.CreateCopy();
+            var roverState = State.CreateCopy();
             roverState.ConfigureExtent(commandSet.ExtentX, commandSet.ExtentY);
             roverState.SetPositionAndDirection(commandSet.InitialX, commandSet.InitialY,commandSet.InitialDirection);
             ExecuteMovementCommands(roverState, commandSet.MovementCommands);
@@ -62,11 +62,11 @@ namespace RoverCore
 
         private void ExecuteCommands(CommandSet commandSet)
         {
-            _roverState.MoveErrors.Clear();
-            _roverState.ConfigureExtent(commandSet.ExtentX, commandSet.ExtentY);
-            _roverState.SetPositionAndDirection(commandSet.InitialX, commandSet.InitialY, commandSet.InitialDirection);
+            State.MoveErrors.Clear();
+            State.ConfigureExtent(commandSet.ExtentX, commandSet.ExtentY);
+            State.SetPositionAndDirection(commandSet.InitialX, commandSet.InitialY, commandSet.InitialDirection);
 
-            ExecuteMovementCommands(_roverState, commandSet.MovementCommands);
+            ExecuteMovementCommands(State, commandSet.MovementCommands);
         }
 
         private void ExecuteMovementCommands(RoverState roverState, string movementCommands)

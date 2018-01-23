@@ -20,10 +20,10 @@ namespace RoverTests
             var rover = new Rover();
             rover.ProcessCommands(commands);
 
-            Debug.Assert(rover.MoveErrors.Count == 0, "Zero errors are expected");
-            Debug.Assert(rover.CurrentLocation.X == 3, "X Should be 3");
-            Debug.Assert(rover.CurrentLocation.Y == 3, "Y Should be 3");
-            Debug.Assert(rover.CurrentDirection == Direction.South, $@"Direction should be {Direction.South}");
+            Debug.Assert(rover.State.MoveErrors.Count == 0, "Zero errors are expected");
+            Debug.Assert(rover.State.CurrentLocation.X == 3, "X Should be 3");
+            Debug.Assert(rover.State.CurrentLocation.Y == 3, "Y Should be 3");
+            Debug.Assert(rover.State.CurrentDirection == Direction.South, $@"Direction should be {Direction.South}");
         }
 
         [TestMethod]
@@ -39,8 +39,8 @@ namespace RoverTests
             var rover = new Rover();
             rover.ProcessCommands(commands);
 
-            Debug.Assert(rover.MoveErrors.Count == 1, "One errors is expected");
-            Debug.Assert(rover.MoveErrors[0] == MoveResult.CommandError);
+            Debug.Assert(rover.State.MoveErrors.Count == 1, "One errors is expected");
+            Debug.Assert(rover.State.MoveErrors[0] == MoveResult.CommandError);
         }
 
         [TestMethod]
@@ -56,8 +56,8 @@ namespace RoverTests
             var rover = new Rover();
             rover.ProcessCommands(commands);
 
-            Debug.Assert(rover.MoveErrors.Count == 1, "Only one error is expected" );
-            Debug.Assert(rover.MoveErrors[0] == MoveResult.XMaxBoundaryExceeded);
+            Debug.Assert(rover.State.MoveErrors.Count == 2, "Only 2 errors expected" );
+            Debug.Assert(rover.State.MoveErrors.Contains(MoveResult.XMaxBoundaryExceeded));
         }
 
         [TestMethod]
@@ -73,8 +73,8 @@ namespace RoverTests
             var rover = new Rover();
             rover.ProcessCommands(commands);
 
-            Debug.Assert(rover.MoveErrors.Count == 1, "Only one error is expected");
-            Debug.Assert(rover.MoveErrors[0] == MoveResult.XMinBoundaryExceeded);
+            Debug.Assert(rover.State.MoveErrors.Count == 2, "Only 2 errors expected");
+            Debug.Assert(rover.State.MoveErrors.Contains(MoveResult.XMinBoundaryExceeded));
         }
 
         [TestMethod]
@@ -90,8 +90,8 @@ namespace RoverTests
             var rover = new Rover();
             rover.ProcessCommands(commands);
 
-            Debug.Assert(rover.MoveErrors.Count == 1, "Only one error is expected");
-            Debug.Assert(rover.MoveErrors[0] == MoveResult.YMaxBoundaryExceeded);
+            Debug.Assert(rover.State.MoveErrors.Count == 2, "Only 2 errors expected");
+            Debug.Assert(rover.State.MoveErrors.Contains(MoveResult.YMaxBoundaryExceeded));
         }
 
         [TestMethod]
@@ -107,17 +107,8 @@ namespace RoverTests
             var rover = new Rover();
             rover.ProcessCommands(commands);
 
-            Debug.Assert(rover.MoveErrors.Count == 1, "Only one error is expected");
-            Debug.Assert(rover.MoveErrors[0] == MoveResult.YMinBoundaryExceeded);
+            Debug.Assert(rover.State.MoveErrors.Count == 2, "Only 2 errors expected");
+            Debug.Assert(rover.State.MoveErrors.Contains(MoveResult.YMinBoundaryExceeded));
         }
-
-        [TestMethod]
-        public void ValidGridSize()
-        {
-        }
-
-
-
-
     }
 }
