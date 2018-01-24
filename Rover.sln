@@ -5,11 +5,14 @@ VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoverCore", "Rover\RoverCore.csproj", "{1D66AD06-367F-413A-92C1-06ED7D4457A5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{495159BE-9204-48D3-A065-FE2A5EAA13BD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoverTests", "RoverTests\RoverTests.csproj", "{A42D2560-6419-4668-B03F-CF49FB50E06D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoveRover", "RoverConsole\MoveRover.csproj", "{9BA6150C-EA27-41BA-9DB3-27E10267B60B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{87C43530-0A5A-4D84-8EB5-6B299665A78D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

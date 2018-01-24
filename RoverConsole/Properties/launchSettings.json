@@ -2,7 +2,7 @@
   "profiles": {
     "MoveRover": {
       "commandName": "Project",
-      "commandLineArgs": "InstructionSet01.txt"
+      "commandLineArgs": "InstructionSet01.rcmd"
     }
   }
 }

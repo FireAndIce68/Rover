@@ -22,9 +22,9 @@ namespace RoverTests
 
             Debug.Assert(commandSet.IsValid, "Command Set should be valid");
             Debug.Assert(commandSet.ExtentX == 8, "Extent X should be 8");
-            Debug.Assert(commandSet.ExtentY == 8, "Extent X should be 8");
+            Debug.Assert(commandSet.ExtentY == 8, "Extent Y should be 8");
             Debug.Assert(commandSet.InitialX == 1, "Initial X should be 1");
-            Debug.Assert(commandSet.InitialY == 2, "Initial X should be 2");
+            Debug.Assert(commandSet.InitialY == 2, "Initial Y should be 2");
             Debug.Assert(commandSet.InitialDirection == Direction.East, "Initial Direction should be East");
             Debug.Assert(commandSet.MovementCommands == "MMLMRMMRRMML", "MovementCommands should be MMLMRMMRRMML");
         }
@@ -34,7 +34,7 @@ namespace RoverTests
         {
             var commands = new[]
             {
-                "998", //3 characters in initial setup
+                "998", //Invalid - 3 characters in initial setup
                 "12 E",
                 "MMLMRMMRRMML"
             };
@@ -62,9 +62,9 @@ namespace RoverTests
 
             Debug.Assert(commandSet.IsValid, "Command Set should be valid");
             Debug.Assert(commandSet.ExtentX == 8, "Extent X should be 8");
-            Debug.Assert(commandSet.ExtentY == 8, "Extent X should be 8");
+            Debug.Assert(commandSet.ExtentY == 8, "Extent Y should be 8");
             Debug.Assert(commandSet.InitialX == 0, "Initial X should be 0");
-            Debug.Assert(commandSet.InitialY == 0, "Initial X should be 0");
+            Debug.Assert(commandSet.InitialY == 0, "Initial Y should be 0");
             Debug.Assert(commandSet.InitialDirection == Direction.East, "Initial Direction should be East");
             Debug.Assert(commandSet.MovementCommands == "MMLMRMMRRMML", "MovementCommands should be MMLMRMMRRMML");
         }
@@ -84,9 +84,9 @@ namespace RoverTests
 
             Debug.Assert(commandSet.IsValid, "Command Set should be valid");
             Debug.Assert(commandSet.ExtentX == 8, "Extent X should be 8");
-            Debug.Assert(commandSet.ExtentY == 8, "Extent X should be 8");
+            Debug.Assert(commandSet.ExtentY == 8, "Extent Y should be 8");
             Debug.Assert(commandSet.InitialX == 8, "Initial X should be 8");
-            Debug.Assert(commandSet.InitialY == 8, "Initial X should be 8");
+            Debug.Assert(commandSet.InitialY == 8, "Initial Y should be 8");
             Debug.Assert(commandSet.InitialDirection == Direction.East, "Initial Direction should be East");
             Debug.Assert(commandSet.MovementCommands == "MMLMRMMRRMML", "MovementCommands should be MMLMRMMRRMML");
         }
@@ -115,7 +115,7 @@ namespace RoverTests
         {
             var commands = new[]
             {
-                "11",  //1 extent >= 2 squares
+                "11",  //Error extent must be >= 2 squares
                 "12 E",
                 "MMLMRMMRRMML"
             };
@@ -209,7 +209,7 @@ namespace RoverTests
             {
                 "88",
                 "12 E",
-                "LLLMRRRMRRRRMLLLLMLRMRLMRLLLRRLM" //Z is an invalid character
+                "LLLMRRRMRRRRMLLLLMLRMRLMRLLLRRLM" 
             };
 
             var commandSet = new CommandSet();

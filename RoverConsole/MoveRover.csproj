@@ -15,10 +15,10 @@
     <None Update="demo.cmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="InstructionSet01.txt">
+    <None Update="InstructionSet01.rcmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="InstructionSet02.txt">
+    <None Update="InstructionSet02.rcmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
