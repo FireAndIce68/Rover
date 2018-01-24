@@ -1,9 +1,9 @@
 Prerequisites
 =============
 
-The Rover Application has been developed as a .NET Core 2 Console Application. The application may be run on Windows / Linux / macOS provided that the Core 2 runtime has been installed.
+The Rover Application has been developed as a .NET Core 2 Console Application. The application may be run on Windows / Linux / macOS provided that the Core 2 runtime has been installed. To run the application from Visual Studio the .NET Core 2 SDK must be installed.
 
-The .NET Core 2 runtime can be downloaded from https://www.microsoft.com/net/download/windows
+The .NET Core 2 runtime and SDK can be downloaded from https://www.microsoft.com/net/download/windows
 
 Source Code
 ===========
@@ -19,11 +19,11 @@ The application can be run in the following ways:
 
 * From Visual Studio
 
-Open the Rover solution (Rover.sln) in Visual Studio 2017 and Run/Debug the MoveRover project. The project has been configured to run the InstructionSet01.rcmd command file which contains the commands given the specification.
+Open the Rover solution (Rover.sln) in Visual Studio 2017 and Run/Debug the *MoveRover* project. The project has been configured to run the *InstructionSet01.rcmd* command file which contains the commands given the specification.
 
 * From the Command Line
 
-The Binaries folder on GitHub directory contains compiled binaries. These can be copied to any local directory and the application executed from there. To run the MoveRover application open a command window / prompt and ensure that the current directory is the directory into which the files from the Binaries directory was copied. Also ensure that the dotnet command is accessible on the path. Type the following at the command prompt:
+The *Binaries* folder on GitHub directory contains executable binaries. These can be copied to any local directory and the application run from there. To run the MoveRover application open a command window / prompt and ensure that the current directory is the directory into which the files from the *Binaries* directory were copied. Also ensure that the *dotnet* command is accessible on the path. Type the following at the command prompt:
 
 ```
 dotnet MoveRover.dll InstructionSet01.rcmd
@@ -31,7 +31,7 @@ dotnet MoveRover.dll InstructionSet01.rcmd
 
 The InstructionSet01.rcmd parameter may be replaced with any valid command file.
 
-For convenience the typing 
+For convenience the running 
 
 ```
 demo
@@ -46,8 +46,8 @@ Solution Structure
 The solution consists of three projects:
 
 * **RoverCore** which contains the classes that represent the Rover. The project consists of two primary classes 
-o CommandSet: This class is responsible for parsing and validating and the commands received by the Rover.  If valid the CommandSet is then executed by the Rover.
-o **Rover**: This class receives the commands, and if they parse into a valid CommandSet the CommandSet is first simulated and if the Rover will not move out of bounds the CommandSet is executed and the new position and orientation returned.
+  o *CommandSet*: This class is responsible for parsing and validating and the commands received by the Rover.  If valid the CommandSet is then executed by the Rover.
+  o *Rover*: This class receives the commands, and if they parse into a valid CommandSet the CommandSet is first simulated and if the Rover will not move out of bounds the CommandSet is executed and the new position and orientation returned.
 
 * **MoveRover** is a console application which sends instructions to and receives responses from the Rover and displays them to the screen.
 
