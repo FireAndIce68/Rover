@@ -65,20 +65,21 @@ The following assumptions were made / rules applied:
 Input
 =====
 
-Input to the MoveRover application is done via a command file which consists of valid sets of command separated by at least one line starting the ‘#’ character. 
-
-# Command Set 1 – Optional first comment line Result 0:3 3 S
+Input to the MoveRover application is done via a command file which consists of valid sets of command separated by at least one line starting the â€˜#â€™ character. 
+```
+# Command Set 1 â€“ Optional first comment line Result 0:3 3 S
 88
 12 E
 MMLMRMMRRMML
 # Command Set 2 - Result 0:2 3 W
 65
 11 N
-# Command Set 3 – Max Bound Error
+# Command Set 3 â€“ Max Bound Error
 MMRMRMMLLMML
 88
 12 E
 MMMMMMMMMMMMMMMMMMMMM
+```
 
 Testing
 ======= 
