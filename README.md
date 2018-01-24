@@ -25,7 +25,9 @@ Open the Rover solution (Rover.sln) in Visual Studio 2017 and Run/Debug the Move
 
 The Binaries folder on GitHub directory contains compiled binaries. These can be copied to any local directory and the application executed from there. To run the MoveRover application open a command window / prompt and ensure that the current directory is the directory into which the files from the Binaries directory was copied. Also ensure that the dotnet command is accessible on the path. Type the following at the command prompt:
 
+```
 dotnet MoveRover.dll InstructionSet01.rcmd
+```
 
 The InstructionSet01.rcmd parameter may be replaced with any valid command file.
 
@@ -34,13 +36,13 @@ Solution Structure
 
 The solution consists of three projects:
 
-* RoverCore which contains the classes that represent the Rover. The project consists of two primary classes 
+* **RoverCore** which contains the classes that represent the Rover. The project consists of two primary classes 
 o CommandSet: This class is responsible for parsing and validating and the commands received by the Rover.  If valid the CommandSet is then executed by the Rover.
-o Rover: This class receives the commands, and if they parse into a valid CommandSet the CommandSet is first simulated and if the Rover will not move out of bounds the CommandSet is executed and the new position and orientation returned.
+o **Rover**: This class receives the commands, and if they parse into a valid CommandSet the CommandSet is first simulated and if the Rover will not move out of bounds the CommandSet is executed and the new position and orientation returned.
 
-* MoveRover is a console application which sends instructions to and receives responses from the Rover and displays them to the screen.
+* **MoveRover** is a console application which sends instructions to and receives responses from the Rover and displays them to the screen.
 
-* RoversTests contains the tests to validate the correct of the operation of the RoverCore code.
+* **RoversTests** contains the tests to validate the correct of the operation of the RoverCore code.
 
 
 Specifications / Assumptions
