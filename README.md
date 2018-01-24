@@ -46,8 +46,8 @@ Solution Structure
 The solution consists of three projects:
 
 * **RoverCore** which contains the classes that represent the Rover. The project consists of two primary classes 
-  o *CommandSet*: This class is responsible for parsing and validating and the commands received by the Rover.  If valid the CommandSet is then executed by the Rover.
-  o *Rover*: This class receives the commands, and if they parse into a valid CommandSet the CommandSet is first simulated and if the Rover will not move out of bounds the CommandSet is executed and the new position and orientation returned.
+  - *CommandSet*: This class is responsible for parsing and validating and the commands received by the Rover.  If valid the CommandSet is then executed by the Rover.
+  - *Rover*: This class receives the commands, and if they parse into a valid CommandSet the CommandSet is first simulated and if the Rover will not move out of bounds the CommandSet is executed and the new position and orientation returned.
 
 * **MoveRover** is a console application which sends instructions to and receives responses from the Rover and displays them to the screen.
 
