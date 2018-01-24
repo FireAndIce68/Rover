@@ -19,7 +19,7 @@ The application can be run in the following ways:
 
 * From Visual Studio
 
-Open the Rover solution (Rover.sln) in Visual Studio 2017 and Run/Debug the *MoveRover* project. The project has been configured to run the *InstructionSet01.rcmd* command file which contains the commands given the specification.
+Open the Rover solution (Rover.sln) in Visual Studio 2017 and Run/Debug the *MoveRover* project. The project has been configured to run the *InstructionSet01.rcmd* command file which contains the commands given in the specification.
 
 * From the Command Line
 
