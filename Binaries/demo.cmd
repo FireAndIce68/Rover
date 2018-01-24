@@ -1,1 +1,1 @@
-dotnet MoveRover.dll InstructionSet01.txt
+dotnet MoveRover.dll InstructionSet01.rcmd
