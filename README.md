@@ -85,8 +85,8 @@ MMLMRMMRRMML
 # Command Set 2 - Result 0:2 3 W
 65
 11 N
-# Command Set 3 – Max Bound Error
 MMRMRMMLLMML
+# Command Set 3 – Max Bound Error
 88
 12 E
 MMMMMMMMMMMMMMMMMMMMM
