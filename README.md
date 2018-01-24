@@ -95,11 +95,11 @@ MMMMMMMMMMMMMMMMMMMMM
 Testing
 ======= 
 
-Since the aplication logic is simple and there are no complex UI / workflows / partial transactions the functioanlity of the core classes could be well verified using units tests. The Test functionality of Visual Studio 2017 was used to build unit tests for the *RoverCore* primary classes. The tests ensure that:
+Since the aplication logic is simple and there are no complex UI / workflows / partial transactions the functionality of the core classes could be comprehensively verified using units tests. The Test functionality of Visual Studio 2017 was used to build unit tests for the *RoverCore* primary classes. The tests ensure that:
 
-* Valid commands produce a valid CommandSet.
-* Malformed commands are detected and produce an invalid CommandSet.
-* Well-formed but invalid commands (e.g. start position out of bounds) are detected and produce an invalid CommandSet.
+* Valid commands produce a valid *CommandSet*.
+* Malformed commands are detected and produce an invalid *CommandSet*.
+* Well-formed but invalid commands (e.g. start position out of bounds) are detected and produce an invalid *CommandSet*.
 * The Rover moves to the expected position when given a well-formed and valid commands.
 * The Rover detects commands would cause it to move out of bounds.
 
