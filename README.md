@@ -71,7 +71,7 @@ The following assumptions were made / rules applied:
 * Instruction sets may be optimized to reduce movement - for example L followed R may be ignored or RRR may be replaced by L.
 * The return string format was changed to be as follows N:X Y D:Message where N = Error count, X Y = new cartesian coordinates, D = new orientation and Message provides additional information.
 
-
+Since, as I understand it, this assigment is not about building fancy UIs but about how one approaches problems and structures solutions/code a simple console application is sufficient to demonstrate that the core classes work as expected.
 
 Input
 =====
@@ -95,11 +95,15 @@ MMMMMMMMMMMMMMMMMMMMM
 Testing
 ======= 
 
-The Test functionality of Visual Studio was used to build unit tests for the RoverCore primary classes. The tests ensure that:
+Since the aplication logic is simple and there are no complex UI / workflows / partial transactions the functioanlity of the core classes could be well verified using units tests. The Test functionality of Visual Studio 2017 was used to build unit tests for the *RoverCore* primary classes. The tests ensure that:
+
 * Valid commands produce a valid CommandSet.
 * Malformed commands are detected and produce an invalid CommandSet.
 * Well-formed but invalid commands (e.g. start position out of bounds) are detected and produce an invalid CommandSet.
 * The Rover moves to the expected position when given a well-formed and valid commands.
-* The Rover detects commands would cause it to move out of bounds. 
+* The Rover detects commands would cause it to move out of bounds.
 
 The full set of tests can be run from Visual Studio 2017 by selecting Test | Run | All Tests or pressing Ctrl-R,A
+
+The operation of the console application (**MoveRover**) was verified by manual testing which in my opinion is adequate for a simple console test appplication.
+
