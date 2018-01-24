@@ -31,6 +31,15 @@ dotnet MoveRover.dll InstructionSet01.rcmd
 
 The InstructionSet01.rcmd parameter may be replaced with any valid command file.
 
+For convenience the typing 
+
+```
+demo
+```
+
+will run a demo on Windows machines.
+
+
 Solution Structure
 ==================
 
