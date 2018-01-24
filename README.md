@@ -71,12 +71,12 @@ The following assumptions were made / rules applied:
 * Instruction sets may be optimized to reduce movement - for example L followed R may be ignored or RRR may be replaced by L.
 * The return string format was changed to be as follows N:X Y D:Message where N = Error count, X Y = new cartesian coordinates, D = new orientation and Message provides additional information.
 
-Since, as I understand it, this assigment is not about building fancy UIs but about how one approaches problems and structures solutions/code a simple console application is sufficient to demonstrate that the core classes work as expected.
+Since, as I understand it, this assigment is not about fancy UIs but about how one approaches problems and structures solutions/code a simple console application is sufficient to demonstrate that the core classes work as expected.
 
 Input
 =====
 
-Input to the MoveRover application is done via a command file which consists of valid sets of command separated by at least one line starting the ‘#’ character. 
+Input to the MoveRover application is done via a command file which consists of valid sets of commands separated by at least one line starting the ‘#’ character. 
 ```
 # Command Set 1 – Optional first comment line Result 0:3 3 S
 88
